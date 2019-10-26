@@ -13,6 +13,7 @@
 		0658E66923649D710041E300 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0658E66723649D710041E300 /* Main.storyboard */; };
 		0658E66B23649D720041E300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0658E66A23649D720041E300 /* Assets.xcassets */; };
 		0658E66E23649D720041E300 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0658E66C23649D720041E300 /* LaunchScreen.storyboard */; };
+		0658E6782364C2910041E300 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0658E6772364C2910041E300 /* PreviewViewController.swift */; };
 		259D1C7A2364AB91001DA358 /* CameraView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259D1C792364AB91001DA358 /* CameraView.storyboard */; };
 		259D1C7C2364AD65001DA358 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259D1C7B2364AD65001DA358 /* CameraViewController.swift */; };
 		259D1C7E2364AD7B001DA358 /* CalorieInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259D1C7D2364AD7B001DA358 /* CalorieInfoController.swift */; };
@@ -30,6 +31,7 @@
 		0658E66A23649D720041E300 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0658E66D23649D720041E300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0658E66F23649D720041E300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0658E6772364C2910041E300 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviewViewController.swift; path = NutriFitness/Controller/PreviewViewController.swift; sourceTree = SOURCE_ROOT; };
 		259D1C792364AB91001DA358 /* CameraView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CameraView.storyboard; sourceTree = "<group>"; };
 		259D1C7B2364AD65001DA358 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		259D1C7D2364AD7B001DA358 /* CalorieInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieInfoController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				259D1C832364B013001DA358 /* OnboardingController.swift */,
 				259D1C7B2364AD65001DA358 /* CameraViewController.swift */,
 				259D1C7D2364AD7B001DA358 /* CalorieInfoController.swift */,
+				0658E6772364C2910041E300 /* PreviewViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			files = (
 				259D1C7E2364AD7B001DA358 /* CalorieInfoController.swift in Sources */,
 				0658E66623649D710041E300 /* HomeViewController.swift in Sources */,
+				0658E6782364C2910041E300 /* PreviewViewController.swift in Sources */,
 				259D1C842364B013001DA358 /* OnboardingController.swift in Sources */,
 				259D1C7C2364AD65001DA358 /* CameraViewController.swift in Sources */,
 				0658E66223649D710041E300 /* AppDelegate.swift in Sources */,
@@ -333,7 +337,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8VU5ULQ45F;
+				DEVELOPMENT_TEAM = F74ZFCVG6D;
 				INFOPLIST_FILE = NutriFitness/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -352,7 +356,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8VU5ULQ45F;
+				DEVELOPMENT_TEAM = F74ZFCVG6D;
 				INFOPLIST_FILE = NutriFitness/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
