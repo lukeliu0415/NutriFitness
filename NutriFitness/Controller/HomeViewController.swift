@@ -8,14 +8,17 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //Test
+        navigationController?.navigationBar.prefersLargeTitles = true
+        self.performSegue(withIdentifier: "toOnboard", sender: self)
+        print("present")
     }
-
+    
 
 }
 
