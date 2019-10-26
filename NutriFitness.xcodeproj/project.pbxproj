@@ -9,21 +9,33 @@
 /* Begin PBXBuildFile section */
 		0658E66223649D710041E300 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0658E66123649D710041E300 /* AppDelegate.swift */; };
 		0658E66423649D710041E300 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0658E66323649D710041E300 /* SceneDelegate.swift */; };
-		0658E66623649D710041E300 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0658E66523649D710041E300 /* ViewController.swift */; };
+		0658E66623649D710041E300 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0658E66523649D710041E300 /* HomeViewController.swift */; };
 		0658E66923649D710041E300 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0658E66723649D710041E300 /* Main.storyboard */; };
 		0658E66B23649D720041E300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0658E66A23649D720041E300 /* Assets.xcassets */; };
 		0658E66E23649D720041E300 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0658E66C23649D720041E300 /* LaunchScreen.storyboard */; };
+		259D1C7A2364AB91001DA358 /* CameraView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259D1C792364AB91001DA358 /* CameraView.storyboard */; };
+		259D1C7C2364AD65001DA358 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259D1C7B2364AD65001DA358 /* CameraViewController.swift */; };
+		259D1C7E2364AD7B001DA358 /* CalorieInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259D1C7D2364AD7B001DA358 /* CalorieInfoController.swift */; };
+		259D1C802364AD95001DA358 /* CalorieInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259D1C7F2364AD95001DA358 /* CalorieInfo.storyboard */; };
+		259D1C822364AF9F001DA358 /* OnboardingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259D1C812364AF9F001DA358 /* OnboardingView.storyboard */; };
+		259D1C842364B013001DA358 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259D1C832364B013001DA358 /* OnboardingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0658E65E23649D710041E300 /* NutriFitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NutriFitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0658E66123649D710041E300 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0658E66323649D710041E300 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0658E66523649D710041E300 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0658E66523649D710041E300 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0658E66823649D710041E300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0658E66A23649D720041E300 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0658E66D23649D720041E300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0658E66F23649D720041E300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		259D1C792364AB91001DA358 /* CameraView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CameraView.storyboard; sourceTree = "<group>"; };
+		259D1C7B2364AD65001DA358 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		259D1C7D2364AD7B001DA358 /* CalorieInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieInfoController.swift; sourceTree = "<group>"; };
+		259D1C7F2364AD95001DA358 /* CalorieInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalorieInfo.storyboard; sourceTree = "<group>"; };
+		259D1C812364AF9F001DA358 /* OnboardingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingView.storyboard; sourceTree = "<group>"; };
+		259D1C832364B013001DA358 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +69,44 @@
 			isa = PBXGroup;
 			children = (
 				0658E66123649D710041E300 /* AppDelegate.swift */,
+				259D1C782364AB66001DA358 /* Controller */,
+				259D1C772364AB5E001DA358 /* View */,
+				259D1C762364AB55001DA358 /* Model */,
 				0658E66323649D710041E300 /* SceneDelegate.swift */,
-				0658E66523649D710041E300 /* ViewController.swift */,
-				0658E66723649D710041E300 /* Main.storyboard */,
 				0658E66A23649D720041E300 /* Assets.xcassets */,
-				0658E66C23649D720041E300 /* LaunchScreen.storyboard */,
 				0658E66F23649D720041E300 /* Info.plist */,
 			);
 			path = NutriFitness;
+			sourceTree = "<group>";
+		};
+		259D1C762364AB55001DA358 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		259D1C772364AB5E001DA358 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0658E66723649D710041E300 /* Main.storyboard */,
+				259D1C812364AF9F001DA358 /* OnboardingView.storyboard */,
+				259D1C792364AB91001DA358 /* CameraView.storyboard */,
+				259D1C7F2364AD95001DA358 /* CalorieInfo.storyboard */,
+				0658E66C23649D720041E300 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		259D1C782364AB66001DA358 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0658E66523649D710041E300 /* HomeViewController.swift */,
+				259D1C832364B013001DA358 /* OnboardingController.swift */,
+				259D1C7B2364AD65001DA358 /* CameraViewController.swift */,
+				259D1C7D2364AD7B001DA358 /* CalorieInfoController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +167,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				259D1C822364AF9F001DA358 /* OnboardingView.storyboard in Resources */,
+				259D1C7A2364AB91001DA358 /* CameraView.storyboard in Resources */,
 				0658E66E23649D720041E300 /* LaunchScreen.storyboard in Resources */,
 				0658E66B23649D720041E300 /* Assets.xcassets in Resources */,
 				0658E66923649D710041E300 /* Main.storyboard in Resources */,
+				259D1C802364AD95001DA358 /* CalorieInfo.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +183,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0658E66623649D710041E300 /* ViewController.swift in Sources */,
+				259D1C7E2364AD7B001DA358 /* CalorieInfoController.swift in Sources */,
+				0658E66623649D710041E300 /* HomeViewController.swift in Sources */,
+				259D1C842364B013001DA358 /* OnboardingController.swift in Sources */,
+				259D1C7C2364AD65001DA358 /* CameraViewController.swift in Sources */,
 				0658E66223649D710041E300 /* AppDelegate.swift in Sources */,
 				0658E66423649D710041E300 /* SceneDelegate.swift in Sources */,
 			);
@@ -285,8 +333,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F74ZFCVG6D;
+				DEVELOPMENT_TEAM = 8VU5ULQ45F;
 				INFOPLIST_FILE = NutriFitness/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,8 +352,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = F74ZFCVG6D;
+				DEVELOPMENT_TEAM = 8VU5ULQ45F;
 				INFOPLIST_FILE = NutriFitness/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
