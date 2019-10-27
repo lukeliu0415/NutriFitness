@@ -154,7 +154,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FLh-dk-X12"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Exercise" id="AUC-5T-pcd"/>
+                    <tabBarItem key="tabBarItem" title="Exercise" image="exercise" id="AUC-5T-pcd"/>
                     <navigationItem key="navigationItem" title="Exercise" largeTitleDisplayMode="always" id="gPk-6E-TRU">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3vQ-Q2-rBD">
                             <connections>
@@ -472,7 +472,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LJa-YY-Wsr"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Nutrition" id="m3o-uc-v9X"/>
+                    <tabBarItem key="tabBarItem" title="Nutrition" image="nutrition" id="m3o-uc-v9X"/>
                     <navigationItem key="navigationItem" title="Nutrition" largeTitleDisplayMode="always" id="h0i-cU-ZZp">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4uR-wk-HOP">
                             <connections>
@@ -482,7 +482,21 @@
                     </navigationItem>
                     <connections>
                         <outlet property="backImage" destination="a7d-0U-qVY" id="31t-KR-YUT"/>
+                        <outlet property="calciumBar" destination="dYJ-DZ-RFn" id="IN8-oq-o4o"/>
+                        <outlet property="calciumPercent" destination="K4a-Tt-zEj" id="cUb-Ey-hWO"/>
                         <outlet property="calorieLabel" destination="tXZ-id-gPK" id="Kiy-5y-Vui"/>
+                        <outlet property="carbsBar" destination="u6H-Eu-DzM" id="3QP-eq-T37"/>
+                        <outlet property="carbsPercent" destination="2Aq-m3-lWn" id="SfG-Gf-lyt"/>
+                        <outlet property="cholesterolBar" destination="FME-N0-kIG" id="oz1-MT-zfc"/>
+                        <outlet property="cholesterolPercent" destination="79P-nM-ytm" id="FZ2-Jq-8MY"/>
+                        <outlet property="farBar" destination="4Wl-A0-SYp" id="f7X-1U-vKy"/>
+                        <outlet property="fatPercent" destination="YM9-M5-mk4" id="bJw-4f-jBM"/>
+                        <outlet property="proteinBar" destination="J9h-kT-C2L" id="Zoq-dJ-3NN"/>
+                        <outlet property="proteinPercent" destination="rb5-q7-Iqo" id="Xma-O8-Hyl"/>
+                        <outlet property="sodiumBar" destination="Lxm-Eh-Fdo" id="VyQ-ZV-riT"/>
+                        <outlet property="sodiumPercent" destination="ewG-bQ-pzB" id="CbQ-PC-Xhr"/>
+                        <outlet property="sugarBar" destination="1kW-Or-XWe" id="QKX-DY-3iA"/>
+                        <outlet property="sugarPercent" destination="qK7-rw-Ir9" id="Qgo-ao-Y9p"/>
                         <segue destination="oLA-Bf-fKm" kind="presentation" identifier="toOnboard" id="DVL-fK-Chy"/>
                     </connections>
                 </viewController>
@@ -515,6 +529,8 @@
     <resources>
         <image name="background" width="1494" height="1734"/>
         <image name="background-2" width="1494" height="1734"/>
+        <image name="exercise" width="67" height="80"/>
+        <image name="nutrition" width="69" height="80"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="BUe-tY-2xq"/>

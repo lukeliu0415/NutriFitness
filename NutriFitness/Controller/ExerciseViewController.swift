@@ -22,7 +22,8 @@ class exerciseTableViewCell: UITableViewCell {
 }
 
 class ExerciseViewController: UIViewController {
-    let exerciseDictionary: [String: Double] = ["Swimming" : 10, "Running": 10, "Hockey": 8, "Dodgeball": 5, "Walking": 3]
+    let exerciseDictionary: [String: Double] = ["Swimming" : 10, "Running": 10, "Hockey": 8, "Dodgeball": 5, "Walking": 3, "Biking": 6]
+    let images = [UIImage(named: "swimming"),UIImage(named: "running"),UIImage(named: "hockey"),UIImage(named: "dodgeball"),UIImage(named: "walking"),UIImage(named: "biking"),]
     var caloriesActiveBurned: Double = 0
     var caloriesEaten: Double = 500
     @IBOutlet weak var tableView: UITableView!
@@ -174,16 +175,26 @@ extension ExerciseViewController: UITableViewDataSource, UITableViewDelegate {
         guard let newCell = cell as? exerciseTableViewCell else {
             return cell
         }
-        newCell.name.text = Array(exerciseDictionary.keys)[indexPath.row]
+        let key = Array(exerciseDictionary.keys)[indexPath.row]
+        newCell.name.text = key
         var netCals: Double = (caloriesEaten - caloriesActiveBurned - UserDefaults.standard.double(forKey: "BMR"))
         netCals.round()
-        caloriesLabel.text = String(netCals)
+        if netCals > 0 {
+            caloriesLabel.text = String(netCals)
+        } else {
+            caloriesLabel.text = "0"
+        }
         let divider: Double = exerciseDictionary[Array(exerciseDictionary.keys)[indexPath.row]]!
         
         var minutes: Double = netCals/divider
         minutes.round()
-        newCell.minutes.text = "\(Int(minutes)) minutes"
-        
+        if minutes > 0 {
+            newCell.minutes.text = "\(Int(minutes)) minutes"
+        }
+        else {
+            newCell.minutes.text = "0 minutes"
+
+        }
         newCell.progressView.backgroundColor = .green
         
         newCell.progressView.layer.cornerRadius = newCell.progressView.bounds.size.height/2
@@ -194,9 +205,13 @@ extension ExerciseViewController: UITableViewDataSource, UITableViewDelegate {
         let constant = CGFloat(minutes/200) * width
         if constant > width {
             newCell.progressView.frame =  CGRect(x: 100, y: 40, width: width, height:20)
+        } else if constant < 0{
+            newCell.progressView.frame =  CGRect(x:100, y: 40, width: 0, height:20)
         } else {
             newCell.progressView.frame =  CGRect(x:100, y: 40, width: constant, height:20)
         }
+        
+        newCell.exercisePicture.image = UIImage(named: key)
         return newCell
     }
     

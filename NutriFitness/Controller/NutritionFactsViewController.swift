@@ -19,11 +19,15 @@ class NutritionFactsViewController: UIViewController {
     @IBOutlet weak var fatAmount: UILabel!
     @IBOutlet weak var proteinAmount: UILabel!
     @IBOutlet weak var calAmount: UILabel!
+    @IBOutlet weak var doneButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("what is food?: \(food)")
         api()
+        doneButton.layer.cornerRadius = 20
+        doneButton.layer.masksToBounds = true
+        doneButton.clipsToBounds = true
     }
     
     @IBAction func backButton(_ sender: Any) {
