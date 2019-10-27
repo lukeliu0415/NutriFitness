@@ -13,5 +13,6 @@ class CalorieHomeController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.title = "Nutrition"
+        self.performSegue(withIdentifier: "toOnboard", sender: self)
     }
 }

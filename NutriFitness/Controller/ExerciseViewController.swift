@@ -13,7 +13,7 @@ class exerciseTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var exercisePicture: UIImageView!
     @IBOutlet weak var minutes: UILabel!
-    @IBOutlet weak var progress: UIProgressView!
+    @IBOutlet weak var progressView: UIView!
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -24,6 +24,8 @@ class ExerciseViewController: UIViewController {
     var caloriesActiveBurned: Double = 0
     var caloriesEaten: Double = 0
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var headImage: UIImageView!
+    @IBOutlet weak var caloriesLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -33,8 +35,17 @@ class ExerciseViewController: UIViewController {
         tableView.separatorStyle = .none
         updateCaloriesEaten()
         updateCalorieInformation()
-        print(caloriesActiveBurned)
-        print(caloriesEaten)
+        headImage.layer.cornerRadius = headImage.bounds.size.width/2
+        headImage.clipsToBounds = true
+        headImage.layer.masksToBounds = true
+        headImage.image = UIImage(named: "background")
+        headImage.layer.shadowPath =
+              UIBezierPath(roundedRect: headImage.bounds,
+              cornerRadius: headImage.layer.cornerRadius).cgPath
+        headImage.layer.shadowColor = UIColor.black.cgColor
+        headImage.layer.shadowOpacity = 0.5
+        headImage.layer.shadowOffset = CGSize(width: 10, height: 10)
+        headImage.layer.shadowRadius = 1
     }
     func updateCaloriesEaten() {
         if HKHealthStore.isHealthDataAvailable() {
@@ -169,11 +180,28 @@ extension ExerciseViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         }
         newCell.name.text = Array(exerciseDictionary.keys)[indexPath.row]
-        let netCals: Double = (caloriesEaten - caloriesActiveBurned - 1000.0 + 2000.0)
+        var netCals: Double = (caloriesEaten - caloriesActiveBurned - 1000.0 + 2000.0)
+        let labelCals = netCals.round()
+        caloriesLabel.text = String(netCals)
         let divider: Double = exerciseDictionary[Array(exerciseDictionary.keys)[indexPath.row]]!
         
-        let minutes: Double = netCals/divider
-        newCell.minutes.text = String(minutes)
+        var minutes: Double = netCals/divider
+        minutes.round()
+        newCell.minutes.text = "\(Int(minutes)) minutes"
+        
+        newCell.progressView.backgroundColor = .green
+        
+        newCell.progressView.layer.cornerRadius = newCell.progressView.bounds.size.height/2
+        newCell.progressView.clipsToBounds = true
+        newCell.progressView.layer.masksToBounds = true
+        let width = self.view.bounds.width - 170
+        
+        let constant = -(width - CGFloat(minutes/200) * width)
+        if constant > -10 {
+            newCell.progressView.rightAnchor.constraint(equalTo: newCell.minutes.leftAnchor, constant: -10).isActive = true
+        }else {
+            newCell.progressView.rightAnchor.constraint(equalTo: newCell.minutes.leftAnchor, constant: constant).isActive = true
+        }
         return newCell
     }
     
