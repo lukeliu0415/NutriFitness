@@ -21,8 +21,12 @@ class PreviewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        classificationLabel.layer.cornerRadius = classificationLabel.bounds.size.height/2
+        classificationLabel.layer.masksToBounds = true
+        classificationLabel.clipsToBounds = true
+        classificationLabel.backgroundColor = .yellow
         photo.image = self.image
-        
+        updateClassifications(for: photo.image!)
         // Do any additional setup after loading the view.
     }
     
@@ -35,6 +39,7 @@ class PreviewViewController: UIViewController {
              */
             let model = try VNCoreMLModel(for: Resnet50().model)
             let request = VNCoreMLRequest(model: model, completionHandler: { [weak self] request, error in
+                print("hello")
                 self?.processClassifications(for: request, error: error)
             })
             request.imageCropAndScaleOption = .centerCrop
@@ -48,10 +53,11 @@ class PreviewViewController: UIViewController {
         classificationLabel.text = "Classifying..."
         
         let orientation = image.imageOrientation
+        let newOrientation = CGImagePropertyOrientation(orientation)
         guard let ciImage = CIImage(image: image) else { fatalError("Unable to create \(CIImage.self) from \(image).") }
         
         DispatchQueue.global(qos: .userInitiated).async {
-            let handler = VNImageRequestHandler(ciImage: ciImage, orientation: orientation)
+            let handler = VNImageRequestHandler(ciImage: ciImage, orientation: newOrientation)
             do {
                 try handler.perform([self.classificationRequest])
             } catch {
@@ -67,16 +73,23 @@ class PreviewViewController: UIViewController {
     
     func processClassifications(for request: VNRequest, error: Error?) {
         DispatchQueue.main.async {
+            print("hello2")
             guard let results = request.results else {
                 self.classificationLabel.text = "Unable to classify image.\n\(error!.localizedDescription)"
                 return
             }
+            print("hello3")
+
             // The `results` will always be `VNClassificationObservation`s, as specified by the Core ML model in this project.
             let classifications = results as! [VNClassificationObservation]
         
             if classifications.isEmpty {
+                print("hello4")
+
                 self.classificationLabel.text = "Nothing recognized."
             } else {
+                print("hello5")
+                //print(classifications)
                 // Display top classifications ranked by confidence in the UI.
                 let topClassifications = classifications.prefix(2)
                 let descriptions = topClassifications.map { classification in
@@ -84,6 +97,7 @@ class PreviewViewController: UIViewController {
                    return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
                 }
                 self.classificationLabel.text = "Classification:\n" + descriptions.joined(separator: "\n")
+                print(self.classificationLabel.text)
             }
         }
     }

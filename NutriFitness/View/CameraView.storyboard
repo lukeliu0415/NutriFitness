@@ -106,19 +106,20 @@
                                     <action selector="noButton:" destination="63O-og-Ec7" eventType="touchUpInside" id="r0P-j7-IQg"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Classification Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAa-Ob-Gdt">
-                                <rect key="frame" x="94" y="705" width="226" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Classification Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAa-Ob-Gdt">
+                                <rect key="frame" x="10" y="638" width="394" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="kwT-lw-wvm"/>
+                                    <constraint firstAttribute="height" constant="100" id="kwT-lw-wvm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="tQj-cO-DPb" firstAttribute="top" secondItem="57U-K7-Mvt" secondAttribute="top" constant="768" id="2vk-I2-Yly"/>
+                            <constraint firstItem="XWc-0q-zFa" firstAttribute="trailing" secondItem="cAa-Ob-Gdt" secondAttribute="trailing" constant="10" id="4KM-Kd-acT"/>
                             <constraint firstItem="G0n-ew-o1o" firstAttribute="leading" secondItem="XWc-0q-zFa" secondAttribute="leading" id="BJ3-Yh-cBm"/>
                             <constraint firstItem="G0n-ew-o1o" firstAttribute="trailing" secondItem="XWc-0q-zFa" secondAttribute="trailing" id="HCI-5W-Rpn"/>
                             <constraint firstItem="G0n-ew-o1o" firstAttribute="centerX" secondItem="57U-K7-Mvt" secondAttribute="centerX" id="Z4N-pE-3wf"/>
@@ -128,6 +129,7 @@
                             <constraint firstItem="7zS-7f-F3I" firstAttribute="top" secondItem="XWc-0q-zFa" secondAttribute="top" id="qS2-fJ-rOD"/>
                             <constraint firstItem="cAa-Ob-Gdt" firstAttribute="centerX" secondItem="57U-K7-Mvt" secondAttribute="centerX" id="rQs-TX-J3R"/>
                             <constraint firstItem="XWc-0q-zFa" firstAttribute="bottom" secondItem="cAa-Ob-Gdt" secondAttribute="bottom" constant="70" id="t7t-AQ-uKr"/>
+                            <constraint firstItem="cAa-Ob-Gdt" firstAttribute="leading" secondItem="XWc-0q-zFa" secondAttribute="leading" constant="10" id="uDD-hU-lfD"/>
                             <constraint firstItem="7zS-7f-F3I" firstAttribute="trailing" secondItem="XWc-0q-zFa" secondAttribute="trailing" id="w2i-jk-2H7"/>
                             <constraint firstItem="7zS-7f-F3I" firstAttribute="leading" secondItem="XWc-0q-zFa" secondAttribute="leading" id="wOb-rh-syk"/>
                             <constraint firstItem="G0n-ew-o1o" firstAttribute="top" secondItem="XWc-0q-zFa" secondAttribute="top" id="yn6-8Y-45s"/>
