@@ -91,13 +91,13 @@ class PreviewViewController: UIViewController {
                 print("hello5")
                 //print(classifications)
                 // Display top classifications ranked by confidence in the UI.
-                let topClassifications = classifications.prefix(2)
+                let topClassifications = classifications.prefix(1)
                 let descriptions = topClassifications.map { classification in
                     // Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
-                   return String(format: "  (%.2f) %@", classification.confidence, classification.identifier)
+                   return String(classification.identifier)
                 }
-                self.classificationLabel.text = "Classification:\n" + descriptions.joined(separator: "\n")
-                print(self.classificationLabel.text)
+                self.classificationLabel.text = "Food item: " + descriptions.joined(separator: "\n")
+                print(descriptions[0])
             }
         }
     }
@@ -110,6 +110,7 @@ class PreviewViewController: UIViewController {
     }
     
     @IBAction func noButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
 }
 
