@@ -12,7 +12,6 @@
 		0658E66623649D710041E300 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0658E66523649D710041E300 /* HomeViewController.swift */; };
 		0658E66923649D710041E300 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0658E66723649D710041E300 /* Main.storyboard */; };
 		0658E66B23649D720041E300 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0658E66A23649D720041E300 /* Assets.xcassets */; };
-		0658E66E23649D720041E300 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0658E66C23649D720041E300 /* LaunchScreen.storyboard */; };
 		0658E6782364C2910041E300 /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0658E6772364C2910041E300 /* PreviewViewController.swift */; };
 		0658E67F2364EB550041E300 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0658E67E2364EB550041E300 /* Resnet50.mlmodel */; };
 		0658E681236505B70041E300 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0658E680236505B70041E300 /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
@@ -21,8 +20,6 @@
 		06DCC1252365848900AAF46C /* dataInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DCC1242365848900AAF46C /* dataInterface.swift */; };
 		259D1C7A2364AB91001DA358 /* CameraView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259D1C792364AB91001DA358 /* CameraView.storyboard */; };
 		259D1C7C2364AD65001DA358 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259D1C7B2364AD65001DA358 /* CameraViewController.swift */; };
-		259D1C7E2364AD7B001DA358 /* CalorieInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259D1C7D2364AD7B001DA358 /* CalorieInfoController.swift */; };
-		259D1C802364AD95001DA358 /* CalorieInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259D1C7F2364AD95001DA358 /* CalorieInfo.storyboard */; };
 		259D1C822364AF9F001DA358 /* OnboardingView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259D1C812364AF9F001DA358 /* OnboardingView.storyboard */; };
 		259D1C842364B013001DA358 /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259D1C832364B013001DA358 /* OnboardingController.swift */; };
 		259D1C882364C62F001DA358 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259D1C872364C62F001DA358 /* ExerciseViewController.swift */; };
@@ -37,7 +34,6 @@
 		0658E66523649D710041E300 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0658E66823649D710041E300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0658E66A23649D720041E300 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0658E66D23649D720041E300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0658E66F23649D720041E300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0658E6772364C2910041E300 /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviewViewController.swift; path = NutriFitness/Controller/PreviewViewController.swift; sourceTree = SOURCE_ROOT; };
 		0658E67E2364EB550041E300 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
@@ -46,8 +42,6 @@
 		06DCC1242365848900AAF46C /* dataInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataInterface.swift; sourceTree = "<group>"; };
 		259D1C792364AB91001DA358 /* CameraView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CameraView.storyboard; sourceTree = "<group>"; };
 		259D1C7B2364AD65001DA358 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
-		259D1C7D2364AD7B001DA358 /* CalorieInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieInfoController.swift; sourceTree = "<group>"; };
-		259D1C7F2364AD95001DA358 /* CalorieInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalorieInfo.storyboard; sourceTree = "<group>"; };
 		259D1C812364AF9F001DA358 /* OnboardingView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OnboardingView.storyboard; sourceTree = "<group>"; };
 		259D1C832364B013001DA358 /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
 		259D1C872364C62F001DA358 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
@@ -114,8 +108,6 @@
 				0658E66723649D710041E300 /* Main.storyboard */,
 				259D1C812364AF9F001DA358 /* OnboardingView.storyboard */,
 				259D1C792364AB91001DA358 /* CameraView.storyboard */,
-				259D1C7F2364AD95001DA358 /* CalorieInfo.storyboard */,
-				0658E66C23649D720041E300 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -130,7 +122,6 @@
 				259D1C832364B013001DA358 /* OnboardingController.swift */,
 				06DCC1242365848900AAF46C /* dataInterface.swift */,
 				259D1C7B2364AD65001DA358 /* CameraViewController.swift */,
-				259D1C7D2364AD7B001DA358 /* CalorieInfoController.swift */,
 				0658E6772364C2910041E300 /* PreviewViewController.swift */,
 				0658E680236505B70041E300 /* CGImagePropertyOrientation+UIImageOrientation.swift */,
 				06DCC11F2365664200AAF46C /* NutritionFactsViewController.swift */,
@@ -212,10 +203,8 @@
 			files = (
 				259D1C822364AF9F001DA358 /* OnboardingView.storyboard in Resources */,
 				259D1C7A2364AB91001DA358 /* CameraView.storyboard in Resources */,
-				0658E66E23649D720041E300 /* LaunchScreen.storyboard in Resources */,
 				0658E66B23649D720041E300 /* Assets.xcassets in Resources */,
 				0658E66923649D710041E300 /* Main.storyboard in Resources */,
-				259D1C802364AD95001DA358 /* CalorieInfo.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,7 +216,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0658E67F2364EB550041E300 /* Resnet50.mlmodel in Sources */,
-				259D1C7E2364AD7B001DA358 /* CalorieInfoController.swift in Sources */,
 				259D1C882364C62F001DA358 /* ExerciseViewController.swift in Sources */,
 				259D1C8A2364C642001DA358 /* CalorieHomeController.swift in Sources */,
 				0658E66623649D710041E300 /* HomeViewController.swift in Sources */,
@@ -251,14 +239,6 @@
 				0658E66823649D710041E300 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0658E66C23649D720041E300 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0658E66D23649D720041E300 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
