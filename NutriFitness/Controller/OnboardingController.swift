@@ -23,10 +23,10 @@ class OnboardingController: UIViewController, UITextFieldDelegate, UIPickerViewD
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        dismissButton.backgroundColor = .gray
-        dismissButton.layer.cornerRadius = 20
-        dismissButton.clipsToBounds = true
-        dismissButton.layer.masksToBounds = true
+//        dismissButton.backgroundColor = .gray
+//        dismissButton.layer.cornerRadius = 20
+//        dismissButton.clipsToBounds = true
+//        dismissButton.layer.masksToBounds = true
         for x in 0 ..< 200 {
             age.append(x+1)
         }
@@ -34,8 +34,10 @@ class OnboardingController: UIViewController, UITextFieldDelegate, UIPickerViewD
             height.append(x+1)
             weight.append(x+1)
         }
-        genderTextField.text = gender[0]
-        ageTextField.text = String(age[0])
+        genderTextField.text = gender[1]
+        ageTextField.text = String(age[16])
+        heightTextField.text = String(height[179])
+        weightTextField.text = String(weight[60])
         genderTextField.delegate = self
         ageTextField.delegate = self
         heightTextField.delegate = self

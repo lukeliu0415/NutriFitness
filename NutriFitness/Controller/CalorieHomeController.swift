@@ -13,7 +13,16 @@ class CalorieHomeController: UIViewController {
     @IBOutlet weak var calorieLabel: UILabel!
     @IBOutlet weak var backImage: UIImageView!
     
-    var caloriesEaten: Double = 500
+    var caloriesEaten: Double = 0
+    var sugarEaten: Double = 0
+    var cholesterolEaten: Double = 0
+    var carbsEaten: Double = 0
+    var proteinEaten: Double = 0
+    var sodiumEaten: Double = 0
+    var calciumEaten: Double = 0
+    var fatEaten: Double = 0
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -56,12 +65,12 @@ class CalorieHomeController: UIViewController {
                      
                     let endDate = calendar.date(byAdding: .day, value: 1, to: startDate)
                      
+                   
+                    let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
+
                     guard let sampleType = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryEnergyConsumed) else {
                         fatalError("*** This method should never fail ***")
                     }
-                    let predicate = HKQuery.predicateForSamples(withStart: startDate, end: endDate, options: [])
-
-                    
 
                    let query = HKSampleQuery(sampleType: sampleType, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: nil) {
                         query, results, error in
@@ -85,6 +94,208 @@ class CalorieHomeController: UIViewController {
                         }
                     }
                     healthStore.execute(query)
+                    
+                    
+                    
+                    
+                    //MARK: Sugar
+                    
+                    guard let sampleType2 = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietarySugar) else {
+                                           fatalError("*** This method should never fail ***")
+                                       }
+
+                                      let query2 = HKSampleQuery(sampleType: sampleType2, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: nil) {
+                                           query, results, error in
+                                           print("in query struff")
+
+                                           guard let samples2 = results as? [HKQuantitySample] else {
+                                               fatalError("An error occured fetching the user's tracked food. In your app, try to handle this error gracefully. The error was: \(error?.localizedDescription)");
+                                           }
+                                           
+                                       DispatchQueue.main.async {
+                                               
+                                           var sum: Double = self.caloriesEaten
+                                               for sample in samples2 {
+                                                   
+                                                   let calories = sample.quantity.doubleValue(for: HKUnit.largeCalorie())
+                                                   sum += calories
+                                               }
+                                           self.caloriesEaten = sum
+                                           self.calorieLabel.text = String(sum)
+
+                                           }
+                                       }
+                                       healthStore.execute(query2)
+                    //MARK: Protein
+                    
+                    guard let sampleType3 = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryProtein) else {
+                                           fatalError("*** This method should never fail ***")
+                                       }
+
+                                      let query3 = HKSampleQuery(sampleType: sampleType3, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: nil) {
+                                           query, results, error in
+                                           print("in query struff")
+
+                                           guard let samples = results as? [HKQuantitySample] else {
+                                               fatalError("An error occured fetching the user's tracked food. In your app, try to handle this error gracefully. The error was: \(error?.localizedDescription)");
+                                           }
+                                           
+                                       DispatchQueue.main.async {
+                                               
+                                           var sum: Double = self.caloriesEaten
+                                               for sample in samples {
+                                                   
+                                                   let calories = sample.quantity.doubleValue(for: HKUnit.largeCalorie())
+                                                   sum += calories
+                                               }
+                                           self.caloriesEaten = sum
+                                           self.calorieLabel.text = String(sum)
+
+                                           }
+                                       }
+                                       healthStore.execute(query3)
+                    
+                    
+                    //MARK: Cholesterol
+                    
+                    guard let sampleType4 = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryEnergyConsumed) else {
+                                           fatalError("*** This method should never fail ***")
+                                       }
+
+                                      let query4 = HKSampleQuery(sampleType: sampleType4, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: nil) {
+                                           query, results, error in
+                                           print("in query struff")
+
+                                           guard let samples = results as? [HKQuantitySample] else {
+                                               fatalError("An error occured fetching the user's tracked food. In your app, try to handle this error gracefully. The error was: \(error?.localizedDescription)");
+                                           }
+                                           
+                                       DispatchQueue.main.async {
+                                               
+                                           var sum: Double = self.caloriesEaten
+                                               for sample in samples {
+                                                   
+                                                   let calories = sample.quantity.doubleValue(for: HKUnit.largeCalorie())
+                                                   sum += calories
+                                               }
+                                           self.caloriesEaten = sum
+                                           self.calorieLabel.text = String(sum)
+
+                                           }
+                                       }
+                                       healthStore.execute(query4)
+                    //MARK: Fat
+                    
+                    guard let sampleType5 = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryEnergyConsumed) else {
+                                           fatalError("*** This method should never fail ***")
+                                       }
+
+                                      let query5 = HKSampleQuery(sampleType: sampleType5, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: nil) {
+                                           query, results, error in
+                                           print("in query struff")
+
+                                           guard let samples = results as? [HKQuantitySample] else {
+                                               fatalError("An error occured fetching the user's tracked food. In your app, try to handle this error gracefully. The error was: \(error?.localizedDescription)");
+                                           }
+                                           
+                                       DispatchQueue.main.async {
+                                               
+                                           var sum: Double = self.caloriesEaten
+                                               for sample in samples {
+                                                   
+                                                   let calories = sample.quantity.doubleValue(for: HKUnit.largeCalorie())
+                                                   sum += calories
+                                               }
+                                           self.caloriesEaten = sum
+                                           self.calorieLabel.text = String(sum)
+
+                                           }
+                                       }
+                                       healthStore.execute(query5)
+                    //MARK: Sodium
+                    guard let sampleType6 = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryEnergyConsumed) else {
+                                           fatalError("*** This method should never fail ***")
+                                       }
+
+                                      let query6 = HKSampleQuery(sampleType: sampleType6, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: nil) {
+                                           query, results, error in
+                                           print("in query struff")
+
+                                           guard let samples = results as? [HKQuantitySample] else {
+                                               fatalError("An error occured fetching the user's tracked food. In your app, try to handle this error gracefully. The error was: \(error?.localizedDescription)");
+                                           }
+                                           
+                                       DispatchQueue.main.async {
+                                               
+                                           var sum: Double = self.caloriesEaten
+                                               for sample in samples {
+                                                   
+                                                   let calories = sample.quantity.doubleValue(for: HKUnit.largeCalorie())
+                                                   sum += calories
+                                               }
+                                           self.caloriesEaten = sum
+                                           self.calorieLabel.text = String(sum)
+
+                                           }
+                                       }
+                                       healthStore.execute(query6)
+                    
+                    //MARK: Carbs
+                    guard let sampleType7 = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryEnergyConsumed) else {
+                         fatalError("*** This method should never fail ***")
+                     }
+
+                    let query7 = HKSampleQuery(sampleType: sampleType7, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: nil) {
+                         query, results, error in
+                         print("in query struff")
+
+                         guard let samples = results as? [HKQuantitySample] else {
+                             fatalError("An error occured fetching the user's tracked food. In your app, try to handle this error gracefully. The error was: \(error?.localizedDescription)");
+                         }
+                         
+                     DispatchQueue.main.async {
+                             
+                         var sum: Double = self.caloriesEaten
+                             for sample in samples {
+                                 
+                                 let calories = sample.quantity.doubleValue(for: HKUnit.largeCalorie())
+                                 sum += calories
+                             }
+                         self.caloriesEaten = sum
+                         self.calorieLabel.text = String(sum)
+
+                         }
+                     }
+                     healthStore.execute(query7)
+                    
+                    //MARK: Calcium
+                    
+                    guard let sampleType8 = HKSampleType.quantityType(forIdentifier: HKQuantityTypeIdentifier.dietaryEnergyConsumed) else {
+                         fatalError("*** This method should never fail ***")
+                     }
+
+                    let query8 = HKSampleQuery(sampleType: sampleType8, predicate: predicate, limit: Int(HKObjectQueryNoLimit), sortDescriptors: nil) {
+                         query, results, error in
+                         print("in query struff")
+
+                         guard let samples = results as? [HKQuantitySample] else {
+                             fatalError("An error occured fetching the user's tracked food. In your app, try to handle this error gracefully. The error was: \(error?.localizedDescription)");
+                         }
+                         
+                     DispatchQueue.main.async {
+                             
+                         var sum: Double = self.caloriesEaten
+                             for sample in samples {
+                                 
+                                 let calories = sample.quantity.doubleValue(for: HKUnit.largeCalorie())
+                                 sum += calories
+                             }
+                         self.caloriesEaten = sum
+                         self.calorieLabel.text = String(sum)
+
+                         }
+                     }
+                     healthStore.execute(query8)
                 }
             }
 
