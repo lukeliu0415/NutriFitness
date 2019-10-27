@@ -13,7 +13,7 @@ class CalorieHomeController: UIViewController {
     @IBOutlet weak var calorieLabel: UILabel!
     @IBOutlet weak var backImage: UIImageView!
     
-    var caloriesEaten: Double = 0
+    var caloriesEaten: Double = 500
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -73,7 +73,7 @@ class CalorieHomeController: UIViewController {
                         
                     DispatchQueue.main.async {
                             
-                            var sum: Double = 0.0
+                        var sum: Double = self.caloriesEaten
                             for sample in samples {
                                 
                                 let calories = sample.quantity.doubleValue(for: HKUnit.largeCalorie())
@@ -98,7 +98,11 @@ extension CalorieHomeController: dataInterface {
     }
     
     func passDataBack(data: NSDictionary) {
-        print("back out \(data["label"]!)")
+        if let calories = data["ENERC_KCAL"] as? Double {
+            caloriesEaten += calories
+        }
+        updateCaloriesEaten()
+        
         
     }
 }

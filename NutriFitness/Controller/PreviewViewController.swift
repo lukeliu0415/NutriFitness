@@ -128,8 +128,8 @@ class PreviewViewController: UIViewController {
 
 extension PreviewViewController: dataInterface {
     func dismissCameraView() {
-        dismiss(animated: true, completion: nil)
         upperDataInterface?.dismissCameraView()
+        dismiss(animated: false, completion: nil)
     }
     
     func passDataBack(data: NSDictionary) {

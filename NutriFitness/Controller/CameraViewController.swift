@@ -29,6 +29,7 @@ class CameraViewController: UIViewController {
         setupInputOutput()
         setupPreviewLayer()
         startRunningCaptureSession()
+        
     }
     
     func setupCaptureSession() {
@@ -99,8 +100,8 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
 
 extension CameraViewController: dataInterface {
     func dismissCameraView() {
-        dismiss(animated: true, completion: nil)
         upperDataInterface?.dismissCameraView()
+        dismiss(animated: true, completion: nil)
     }
     
     func passDataBack(data: NSDictionary) {

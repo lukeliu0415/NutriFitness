@@ -8,6 +8,7 @@
 
 import UIKit
 import HealthKit
+
 class exerciseTableViewCell: UITableViewCell {
     
     @IBOutlet weak var name: UILabel!
@@ -17,14 +18,13 @@ class exerciseTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
-
     }
 }
+
 class ExerciseViewController: UIViewController {
     let exerciseDictionary: [String: Double] = ["Swimming" : 10, "Running": 10, "Hockey": 8, "Dodgeball": 5, "Walking": 3]
     var caloriesActiveBurned: Double = 0
-    var caloriesEaten: Double = 0
+    var caloriesEaten: Double = 500
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headImage: UIImageView!
     @IBOutlet weak var caloriesLabel: UILabel!
@@ -83,7 +83,7 @@ class ExerciseViewController: UIViewController {
                         
                     DispatchQueue.main.async {
                             
-                            var sum: Double = 0.0
+                        var sum: Double = self.caloriesEaten
                             for sample in samples {
                                 
                                 let calories = sample.quantity.doubleValue(for: HKUnit.largeCalorie())
@@ -194,12 +194,10 @@ extension ExerciseViewController: UITableViewDataSource, UITableViewDelegate {
         let constant = CGFloat(minutes/200) * width
         if constant > width {
             newCell.progressView.frame =  CGRect(x: 100, y: 40, width: width, height:20)
-        }else {
+        } else {
             newCell.progressView.frame =  CGRect(x:100, y: 40, width: constant, height:20)
         }
         return newCell
     }
-    
-    
     
 }
