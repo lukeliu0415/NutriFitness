@@ -25,7 +25,7 @@ class ExerciseViewController: UIViewController {
     let exerciseDictionary: [String: Double] = ["Swimming" : 10, "Running": 10, "Hockey": 8, "Dodgeball": 5, "Walking": 3, "Biking": 6]
     let images = [UIImage(named: "swimming"),UIImage(named: "running"),UIImage(named: "hockey"),UIImage(named: "dodgeball"),UIImage(named: "walking"),UIImage(named: "biking"),]
     var caloriesActiveBurned: Double = 0
-    var caloriesEaten: Double = 500
+    var caloriesEaten: Double = 0
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headImage: UIImageView!
     @IBOutlet weak var caloriesLabel: UILabel!
@@ -43,7 +43,13 @@ class ExerciseViewController: UIViewController {
         headImage.layer.masksToBounds = true
         headImage.image = UIImage(named: "background")
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        updateCaloriesEaten()
+        updateCalorieInformation()
+    }
     func updateCaloriesEaten() {
+        self.caloriesEaten = 0
         if HKHealthStore.isHealthDataAvailable() {
             // Add code to use HealthKit here.
             let healthStore = HKHealthStore()

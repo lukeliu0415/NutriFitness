@@ -57,6 +57,10 @@ class CalorieHomeController: UIViewController {
         updateCaloriesEaten()
         viewSetup()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        updateCaloriesEaten()
+    }
     func viewSetup() {
         for x in [carbsBar, sugarBar, cholesterolBar, calciumBar, farBar, sodiumBar, proteinBar] {
             x?.backgroundColor = .orange
@@ -78,7 +82,7 @@ class CalorieHomeController: UIViewController {
             let healthStore = HKHealthStore()
             let allTypes = Set([HKObjectType.workoutType(),
                                 HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
-                                HKObjectType.quantityType(forIdentifier: .dietaryEnergyConsumed)!])
+                                HKObjectType.quantityType(forIdentifier: .dietaryEnergyConsumed)!, HKObjectType.quantityType(forIdentifier: .dietaryFatTotal)!, HKObjectType.quantityType(forIdentifier: .dietaryCholesterol)!, HKObjectType.quantityType(forIdentifier: .dietaryCalcium)!, HKObjectType.quantityType(forIdentifier: .dietaryCarbohydrates)!, HKObjectType.quantityType(forIdentifier: .dietarySugar)!, HKObjectType.quantityType(forIdentifier: .dietarySodium)!, HKObjectType.quantityType(forIdentifier: .dietaryProtein)!])
 
             healthStore.requestAuthorization(toShare: allTypes, read: allTypes) { (success, error) in
                 if !success {
