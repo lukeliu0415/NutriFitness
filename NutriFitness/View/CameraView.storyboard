@@ -43,7 +43,7 @@
                         <viewLayoutGuide key="safeArea" id="KfI-Tt-ykf"/>
                     </view>
                     <connections>
-                        <segue destination="63O-og-Ec7" kind="presentation" identifier="showPhotoSegue" id="rKH-59-IKb"/>
+                        <segue destination="63O-og-Ec7" kind="showDetail" identifier="showPhotoSegue" id="rKH-59-IKb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0q4-8g-bsj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -136,22 +136,32 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XWc-0q-zFa"/>
                     </view>
+                    <navigationItem key="navigationItem" id="X2r-le-gDZ"/>
                     <connections>
                         <outlet property="classificationLabel" destination="cAa-Ob-Gdt" id="SPX-sB-oqh"/>
                         <outlet property="photo" destination="G0n-ew-o1o" id="WiA-6J-XYg"/>
+                        <segue destination="jhh-Vk-rfW" kind="showDetail" identifier="nutritionFactsSegue" id="igC-92-3ou"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oi3-OC-qWq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1772.4637681159422" y="-1973.4375"/>
         </scene>
-        <!--CalorieInfo-->
-        <scene sceneID="dWS-24-t0T">
+        <!--View Controller-->
+        <scene sceneID="Cqj-TR-mVM">
             <objects>
-                <viewControllerPlaceholder storyboardName="CalorieInfo" id="Ba2-Cf-TXj" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="r0Q-vM-btb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="jhh-Vk-rfW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0K9-mI-8Sy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="pzQ-OA-wQr"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ImN-Lc-Oqg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mcr-G5-qhN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2062" y="-2442"/>
+            <point key="canvasLocation" x="-1067" y="-1973"/>
         </scene>
     </scenes>
 </document>

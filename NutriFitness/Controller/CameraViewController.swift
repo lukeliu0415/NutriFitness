@@ -76,7 +76,6 @@ class CameraViewController: UIViewController {
     @IBAction func cameraButton(_ sender: Any) {
         let settings = AVCapturePhotoSettings()
         photoOutput?.capturePhoto(with: settings, delegate: self)
-        //performSegue(withIdentifier: "showPhotoSegue", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

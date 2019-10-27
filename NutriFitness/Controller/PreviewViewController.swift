@@ -18,6 +18,7 @@ class PreviewViewController: UIViewController {
     @IBOutlet weak var photo: UIImageView!
     var image: UIImage!
     @IBOutlet weak var classificationLabel: UILabel!
+    var sfood: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -97,6 +98,7 @@ class PreviewViewController: UIViewController {
                    return String(classification.identifier)
                 }
                 self.classificationLabel.text = "Food item: " + descriptions.joined(separator: "\n")
+                self.sfood = descriptions[0]
                 print(descriptions[0])
             }
         }
@@ -106,7 +108,15 @@ class PreviewViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "nutritionFactsSegue" {
+            let vc = NutritionFactsViewController()
+            vc.food = self.sfood
+        }
+    }
+    
     @IBAction func yesButton(_ sender: Any) {
+        performSegue(withIdentifier: "nutritionFactsSegue", sender: nil)
     }
     
     @IBAction func noButton(_ sender: Any) {
