@@ -154,7 +154,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FLh-dk-X12"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Exercise" image="exercise" id="AUC-5T-pcd"/>
+                    <tabBarItem key="tabBarItem" title="Exercise" image="exercises" id="AUC-5T-pcd"/>
                     <navigationItem key="navigationItem" title="Exercise" largeTitleDisplayMode="always" id="gPk-6E-TRU">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="3vQ-Q2-rBD">
                             <connections>
@@ -240,8 +240,9 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skh-0x-kxp">
                                                 <rect key="frame" x="0.0" y="0.0" width="83.5" height="252.5"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u6H-Eu-DzM">
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u6H-Eu-DzM">
                                                         <rect key="frame" x="20" y="0.0" width="43.5" height="212"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Aq-m3-lWn">
@@ -263,11 +264,7 @@
                                                     <constraint firstAttribute="trailing" secondItem="RJh-qB-8Mw" secondAttribute="trailing" id="9Hs-ty-jBB"/>
                                                     <constraint firstAttribute="bottom" secondItem="RJh-qB-8Mw" secondAttribute="bottom" constant="10" id="FjC-SS-7Pd"/>
                                                     <constraint firstItem="2Aq-m3-lWn" firstAttribute="centerX" secondItem="skh-0x-kxp" secondAttribute="centerX" id="KUQ-bw-jeg"/>
-                                                    <constraint firstItem="u6H-Eu-DzM" firstAttribute="leading" secondItem="skh-0x-kxp" secondAttribute="leading" constant="20" id="War-eL-KtM"/>
                                                     <constraint firstItem="2Aq-m3-lWn" firstAttribute="centerY" secondItem="skh-0x-kxp" secondAttribute="centerY" id="dX0-Ep-U9Y"/>
-                                                    <constraint firstItem="u6H-Eu-DzM" firstAttribute="top" secondItem="skh-0x-kxp" secondAttribute="top" id="f8n-UD-4gO"/>
-                                                    <constraint firstAttribute="trailing" secondItem="u6H-Eu-DzM" secondAttribute="trailing" constant="20" id="wl4-23-zCy"/>
-                                                    <constraint firstItem="RJh-qB-8Mw" firstAttribute="top" secondItem="u6H-Eu-DzM" secondAttribute="bottom" constant="10" id="xhL-PN-0om"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LpY-fB-zyC">
@@ -472,7 +469,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LJa-YY-Wsr"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Nutrition" image="nutrition" id="m3o-uc-v9X"/>
+                    <tabBarItem key="tabBarItem" title="Nutrition" image="nutritions" id="m3o-uc-v9X"/>
                     <navigationItem key="navigationItem" title="Nutrition" largeTitleDisplayMode="always" id="h0i-cU-ZZp">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4uR-wk-HOP">
                             <connections>
@@ -529,8 +526,8 @@
     <resources>
         <image name="background" width="1494" height="1734"/>
         <image name="background-2" width="1494" height="1734"/>
-        <image name="exercise" width="67" height="80"/>
-        <image name="nutrition" width="69" height="80"/>
+        <image name="exercises" width="20" height="24"/>
+        <image name="nutritions" width="20.5" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="BUe-tY-2xq"/>
