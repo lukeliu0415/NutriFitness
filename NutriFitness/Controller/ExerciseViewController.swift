@@ -17,6 +17,8 @@ class exerciseTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+
     }
 }
 class ExerciseViewController: UIViewController {
@@ -39,13 +41,6 @@ class ExerciseViewController: UIViewController {
         headImage.clipsToBounds = true
         headImage.layer.masksToBounds = true
         headImage.image = UIImage(named: "background")
-        headImage.layer.shadowPath =
-              UIBezierPath(roundedRect: headImage.bounds,
-              cornerRadius: headImage.layer.cornerRadius).cgPath
-        headImage.layer.shadowColor = UIColor.black.cgColor
-        headImage.layer.shadowOpacity = 0.5
-        headImage.layer.shadowOffset = CGSize(width: 10, height: 10)
-        headImage.layer.shadowRadius = 1
     }
     func updateCaloriesEaten() {
         if HKHealthStore.isHealthDataAvailable() {
@@ -180,8 +175,8 @@ extension ExerciseViewController: UITableViewDataSource, UITableViewDelegate {
             return cell
         }
         newCell.name.text = Array(exerciseDictionary.keys)[indexPath.row]
-        var netCals: Double = (caloriesEaten - caloriesActiveBurned - 1000.0 + 2000.0)
-        let labelCals = netCals.round()
+        var netCals: Double = (caloriesEaten - caloriesActiveBurned - UserDefaults.standard.double(forKey: "BMR"))
+        netCals.round()
         caloriesLabel.text = String(netCals)
         let divider: Double = exerciseDictionary[Array(exerciseDictionary.keys)[indexPath.row]]!
         
@@ -194,13 +189,13 @@ extension ExerciseViewController: UITableViewDataSource, UITableViewDelegate {
         newCell.progressView.layer.cornerRadius = newCell.progressView.bounds.size.height/2
         newCell.progressView.clipsToBounds = true
         newCell.progressView.layer.masksToBounds = true
-        let width = self.view.bounds.width - 170
+        let width = self.view.bounds.width - 230
         
-        let constant = -(width - CGFloat(minutes/200) * width)
-        if constant > -10 {
-            newCell.progressView.rightAnchor.constraint(equalTo: newCell.minutes.leftAnchor, constant: -10).isActive = true
+        let constant = CGFloat(minutes/200) * width
+        if constant > width {
+            newCell.progressView.frame =  CGRect(x: 100, y: 40, width: width, height:20)
         }else {
-            newCell.progressView.rightAnchor.constraint(equalTo: newCell.minutes.leftAnchor, constant: constant).isActive = true
+            newCell.progressView.frame =  CGRect(x:100, y: 40, width: constant, height:20)
         }
         return newCell
     }
