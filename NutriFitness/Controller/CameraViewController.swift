@@ -12,6 +12,7 @@ import AVKit
 
 class CameraViewController: UIViewController {
 
+    var upperDataInterface: dataInterface?
     var captureSession = AVCaptureSession()
     var backCamera: AVCaptureDevice?
     var frontCamera: AVCaptureDevice?
@@ -82,6 +83,7 @@ class CameraViewController: UIViewController {
         if segue.identifier == "showPhotoSegue" {
             let previewVC = segue.destination as! PreviewViewController
             previewVC.image = self.image
+            previewVC.upperDataInterface = self
         }
     }
 }
@@ -92,5 +94,16 @@ extension CameraViewController: AVCapturePhotoCaptureDelegate {
             image = UIImage(data: imageData)
             performSegue(withIdentifier: "showPhotoSegue", sender: nil)
         }
+    }
+}
+
+extension CameraViewController: dataInterface {
+    func dismissCameraView() {
+        dismiss(animated: true, completion: nil)
+        upperDataInterface?.dismissCameraView()
+    }
+    
+    func passDataBack(data: NSDictionary) {
+        upperDataInterface?.passDataBack(data: data)
     }
 }

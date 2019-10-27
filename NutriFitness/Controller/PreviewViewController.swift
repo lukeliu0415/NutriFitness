@@ -15,6 +15,7 @@ import ImageIO
 
 class PreviewViewController: UIViewController {
 
+    var upperDataInterface: dataInterface?
     @IBOutlet weak var photo: UIImageView!
     var image: UIImage!
     @IBOutlet weak var classificationLabel: UILabel!
@@ -110,8 +111,9 @@ class PreviewViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "nutritionFactsSegue" {
-            let vc = NutritionFactsViewController()
+            let vc = segue.destination as! NutritionFactsViewController
             vc.food = self.sfood
+            vc.upperDataInterface = self
         }
     }
     
@@ -124,3 +126,13 @@ class PreviewViewController: UIViewController {
     }
 }
 
+extension PreviewViewController: dataInterface {
+    func dismissCameraView() {
+        dismiss(animated: true, completion: nil)
+        upperDataInterface?.dismissCameraView()
+    }
+    
+    func passDataBack(data: NSDictionary) {
+        upperDataInterface?.passDataBack(data: data)
+    }
+}

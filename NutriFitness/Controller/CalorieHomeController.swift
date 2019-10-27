@@ -23,10 +23,14 @@ class CalorieHomeController: UIViewController {
         backImage.layer.masksToBounds = true
         self.performSegue(withIdentifier: "toOnboard", sender: self)
         updateCaloriesEaten()
-        
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toCameraSegue" {
+            let vc = segue.destination as! CameraViewController
+            vc.upperDataInterface = self
+        }
+    }
     
     func updateCaloriesEaten() {
         if HKHealthStore.isHealthDataAvailable() {
@@ -85,5 +89,16 @@ class CalorieHomeController: UIViewController {
             }
 
         }
+    }
+}
+
+extension CalorieHomeController: dataInterface {
+    func dismissCameraView() {
+        // dont do anything
+    }
+    
+    func passDataBack(data: NSDictionary) {
+        print("back out \(data["label"]!)")
+        
     }
 }

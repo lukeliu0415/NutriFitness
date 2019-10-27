@@ -522,7 +522,7 @@
                     <navigationItem key="navigationItem" title="Nutrition" largeTitleDisplayMode="always" id="h0i-cU-ZZp">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="4uR-wk-HOP">
                             <connections>
-                                <segue destination="LlX-EC-q5C" kind="showDetail" id="BUe-tY-2xq"/>
+                                <segue destination="LlX-EC-q5C" kind="showDetail" identifier="toCameraSegue" id="BUe-tY-2xq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

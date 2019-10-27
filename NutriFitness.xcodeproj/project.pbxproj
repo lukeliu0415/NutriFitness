@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,8 @@
 		0658E67F2364EB550041E300 /* Resnet50.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0658E67E2364EB550041E300 /* Resnet50.mlmodel */; };
 		0658E681236505B70041E300 /* CGImagePropertyOrientation+UIImageOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0658E680236505B70041E300 /* CGImagePropertyOrientation+UIImageOrientation.swift */; };
 		06DCC1202365664200AAF46C /* NutritionFactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DCC11F2365664200AAF46C /* NutritionFactsViewController.swift */; };
+		06DCC1232365798500AAF46C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 06DCC1222365798500AAF46C /* Alamofire */; };
+		06DCC1252365848900AAF46C /* dataInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DCC1242365848900AAF46C /* dataInterface.swift */; };
 		259D1C7A2364AB91001DA358 /* CameraView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 259D1C792364AB91001DA358 /* CameraView.storyboard */; };
 		259D1C7C2364AD65001DA358 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259D1C7B2364AD65001DA358 /* CameraViewController.swift */; };
 		259D1C7E2364AD7B001DA358 /* CalorieInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259D1C7D2364AD7B001DA358 /* CalorieInfoController.swift */; };
@@ -41,6 +43,7 @@
 		0658E67E2364EB550041E300 /* Resnet50.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Resnet50.mlmodel; sourceTree = "<group>"; };
 		0658E680236505B70041E300 /* CGImagePropertyOrientation+UIImageOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGImagePropertyOrientation+UIImageOrientation.swift"; sourceTree = "<group>"; };
 		06DCC11F2365664200AAF46C /* NutritionFactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionFactsViewController.swift; sourceTree = "<group>"; };
+		06DCC1242365848900AAF46C /* dataInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataInterface.swift; sourceTree = "<group>"; };
 		259D1C792364AB91001DA358 /* CameraView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CameraView.storyboard; sourceTree = "<group>"; };
 		259D1C7B2364AD65001DA358 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		259D1C7D2364AD7B001DA358 /* CalorieInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalorieInfoController.swift; sourceTree = "<group>"; };
@@ -59,6 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				259D1C942364D182001DA358 /* HealthKit.framework in Frameworks */,
+				06DCC1232365798500AAF46C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,6 +128,7 @@
 				259D1C872364C62F001DA358 /* ExerciseViewController.swift */,
 				259D1C892364C642001DA358 /* CalorieHomeController.swift */,
 				259D1C832364B013001DA358 /* OnboardingController.swift */,
+				06DCC1242365848900AAF46C /* dataInterface.swift */,
 				259D1C7B2364AD65001DA358 /* CameraViewController.swift */,
 				259D1C7D2364AD7B001DA358 /* CalorieInfoController.swift */,
 				0658E6772364C2910041E300 /* PreviewViewController.swift */,
@@ -157,6 +162,9 @@
 			dependencies = (
 			);
 			name = NutriFitness;
+			packageProductDependencies = (
+				06DCC1222365798500AAF46C /* Alamofire */,
+			);
 			productName = NutriFitness;
 			productReference = 0658E65E23649D710041E300 /* NutriFitness.app */;
 			productType = "com.apple.product-type.application";
@@ -185,6 +193,9 @@
 				Base,
 			);
 			mainGroup = 0658E65523649D710041E300;
+			packageReferences = (
+				06DCC1212365798500AAF46C /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 0658E65F23649D710041E300 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -221,6 +232,7 @@
 				259D1C8A2364C642001DA358 /* CalorieHomeController.swift in Sources */,
 				0658E66623649D710041E300 /* HomeViewController.swift in Sources */,
 				06DCC1202365664200AAF46C /* NutritionFactsViewController.swift in Sources */,
+				06DCC1252365848900AAF46C /* dataInterface.swift in Sources */,
 				0658E6782364C2910041E300 /* PreviewViewController.swift in Sources */,
 				259D1C842364B013001DA358 /* OnboardingController.swift in Sources */,
 				259D1C7C2364AD65001DA358 /* CameraViewController.swift in Sources */,
@@ -428,6 +440,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		06DCC1212365798500AAF46C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		06DCC1222365798500AAF46C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 06DCC1212365798500AAF46C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0658E65623649D710041E300 /* Project object */;
 }
