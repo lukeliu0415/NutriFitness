@@ -230,7 +230,7 @@ class CalorieHomeController: UIViewController {
                                                    let calories = sample.quantity.doubleValue(for: HKUnit.gram())
                                                    sum += calories
                                                }
-                                           self.cholesterolEaten = sum/50 * 100
+                                        self.cholesterolEaten = sum/0.300 * 100
                                             self.cholesterolEaten.round()
                                             self.cholesterolPercent.text = "\(self.cholesterolEaten)%"
                                            if self.cholesterolEaten > 100 {
